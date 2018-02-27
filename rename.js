@@ -10,7 +10,7 @@ let extensions = [ '.srt', '.mkv', '.avi', '.mp4' ];
 const directory = process.argv[2] || '.';
 
 // regular expression
-const reg = process.argv[2] || /S\d{1,2}E\d{1,3}/g;
+const reg = process.argv[3] || /S\d{1,2}E\d{1,3}/g;
 
 // libs
 const fs = require('fs');

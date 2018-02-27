@@ -9,6 +9,9 @@ let extensions = [ '.srt', '.mkv', '.avi', '.mp4' ];
 // change to your directory
 const directory = process.argv[2] || '.';
 
+// regular expression
+const reg = process.argv[2] || /S\d{1,2}E\d{1,3}/g;
+
 // libs
 const fs = require('fs');
 const path = require('path');
@@ -18,7 +21,7 @@ fs.readdirSync(directory).forEach(file => {
   
   // variables
   let ext = path.extname(file);
-  let name = file.match(/S\d{1,2}E\d{1,3}/g);
+  let name = file.match(reg);
 
   // if invalid ext
   if (extensions.indexOf(ext) < 0) {

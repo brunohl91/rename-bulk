@@ -7,7 +7,7 @@ let srtPrefix = '.por';
 let extensions = [ '.srt', '.mkv', '.avi', '.mp4' ];
 
 // change to your directory
-const directory = '.';
+const directory = process.argv[2] || '.';
 
 // libs
 const fs = require('fs');
@@ -26,7 +26,7 @@ fs.readdirSync(directory).forEach(file => {
     return false;
   }
   // if pattern not found
-  if (name.length == 0) {
+  if (!name || name.length == 0) {
     console.log("Pattern not found:" + file);
     return false;
   }
@@ -37,7 +37,7 @@ fs.readdirSync(directory).forEach(file => {
 
   // adjust
   let newName = name[0] + ext;
-  fs.renameSync(file, newName);
+  fs.renameSync(directory + '/' + file, directory + '/' + newName);
   console.log("Renamed file: " + file + " to: " + newName);
 
 });

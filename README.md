@@ -14,7 +14,9 @@ let srtPrefix = '.por';
 
 // change to your extensions
 let extensions = [ '.srt', '.mkv', '.avi', '.mp4' ];
+```
 
-// change to your directory
-const directory = '.';
+Run with arg to your directory or none to current directory
+```
+node rename.js "C:\Users\Bruno\Desktop\SCRBS-S01-09\Scrubs - 2nd Season"
 ```
